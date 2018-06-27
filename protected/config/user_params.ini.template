@@ -33,5 +33,4 @@ db_password=crashfixpwd
 ; so on.
 db_table_prefix=tbl_ 
 
-
-
+daemon_port=50

@@ -5,9 +5,9 @@
  */
 class Daemon extends CApplicationComponent
 {
-	public $host;        // Service host.
-	public $servicePort; // Service port.
-	public $errorMsg;    // Error message.
+	public $host;     // Service host.
+	public $port;     // Service port.
+	public $errorMsg; // Error message.
 	
     const DAEMON_CHECK_OK                = 0; // Daemon check OK.
     const DAEMON_CHECK_INACTIVE          = 1; // Daemon seems to be inactive or not responding.
@@ -304,12 +304,12 @@ class Daemon extends CApplicationComponent
 		} 
 		
 		// Connect socket	
-		$result = @socket_connect($sock, '127.0.0.1', '50');
+		$result = @socket_connect($sock, $this->host, $this->port);
 		if( FALSE === $result ) 
 		{
-			$responce = "Error connecting to daemon.";
+			$responce = "Error connecting to daemon ".$this->host.":".$this->port;
 			return -1;
-		}		
+		}
 		
 		// Read greeting message from daemon
 		$responce = socket_read($sock, 128);

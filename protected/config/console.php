@@ -23,11 +23,7 @@ return array(
 		'db'=>dbParams(),		
 		'dbTest'=>dbParams('test_'),
 				
-		'daemon'=>array(
-			'class'=>'Daemon',
-			'host'=>'127.0.0.1',
-			'servicePort'=>'50',
-		),		
+		'daemon'=> daemonParams(),
 		
 		'log'=>array(
 			'class'=>'CLogRouter',

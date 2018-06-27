@@ -12,6 +12,19 @@ function getCommonParams()
     
 }
 
+/**
+ * 
+ */
+function daemonParams()
+{
+	$userParams = parse_ini_file(dirname(__FILE__).DIRECTORY_SEPARATOR.'user_params.ini');
+
+	return array(		
+            'class'=>'Daemon',			
+            'host'=>$userParams['daemon_host'],    
+            'port'=>$userParams['daemon_port'],    
+        );
+}
 
 /**
  * This helper function is used for extracting db connection parameters from INI

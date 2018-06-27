@@ -62,11 +62,7 @@ return array(
             'connectionID' => 'db',
             'sessionTableName' => '{{YiiSession}}'
         ),
-        'daemon' => array(
-            'class' => 'Daemon',
-            'host' => '127.0.0.1',
-            'servicePort' => '50',
-        ),
+        'daemon' => daemonParams(),
         'errorHandler' => array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',
