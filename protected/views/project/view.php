@@ -163,7 +163,7 @@ foreach (Yii::app()->user->getFlashes() as $key => $message) {
 
 <?php 
  $script = <<<SCRIPT
-$(":checkbox").live('click', function(e)
+$('body').on('click', ':checkbox', function(e)
 {		
 	var totalSelected = 0;
 	$("input[name='DeleteRows\[\]']").each(function() {if($(this).attr('checked')) totalSelected++;});
