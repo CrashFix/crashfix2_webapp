@@ -129,7 +129,12 @@ You have no projects assigned.
 $('body').on('click', ':checkbox', function(e)
 {	
 	var totalSelected = 0;
-	$("input[name='DeleteRows\[\]']").each(function() {if($(this).attr('checked')) totalSelected++;});
+	$("input[name='DeleteRows\[\]']").each(function() 
+		{
+			if(this['checked']==true) 
+				totalSelected++;
+		}
+	);
 	
 	if(totalSelected==0)
 		$("#delete_selected").css('visibility', 'hidden');
